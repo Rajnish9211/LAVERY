@@ -4,7 +4,7 @@
 let publickey = "b309871f10806da0e2b3918da9a73af5";
 let cardDiv = document.getElementById("cards");
 let searchBar = document.getElementById("searchInput");
-let favourites = JSON.parse(localStorage.getItem("fav"));
+let favourites = JSON.parse(localStorage.getItem("fav")) || [];
 //! Onload Function for first call
 window.onload = ()=>{
     emptyData();
@@ -47,16 +47,7 @@ const emptyData = async function getData(){
         //pushing data to local storage
         window.localStorage.setItem("fav",JSON.stringify(favourites));
        });
-       let bio = document.createElement("button");
-     newDiv.appendChild(bio);
-     bio.setAttribute("id","btn");
-     bio.textContent="MORE DETAILS ❤️";
-     bio.addEventListener("click",(ele)=>{
-        favourites.push(e);
-        //pushing data to local storage
-        window.localStorage.setItem("search",JSON.stringify(e));
-        window.location.href ="./superhero.html";
-       });
+ 
      });
 };
 // Main fetch url function
